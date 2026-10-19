@@ -37,3 +37,11 @@ footer a,#visit a:not(.btn),#contact a{color:inherit}
 .foot-logo{height:56px;width:auto;margin-bottom:10px;background:var(--c);padding:8px 14px;border-radius:12px}
 footer a{color:inherit}
 @media(max-width:780px){.logo img{height:40px}}
+.menu-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));align-items:start}
+.card li.x,.menu-grid .card li{display:block;padding:10px 0}
+.mi{display:flex;justify-content:space-between;gap:10px;font-weight:700}.mi b{white-space:nowrap}
+.md{font-size:.85rem;opacity:.75;margin-top:3px;line-height:1.45}
+.note{font-size:.85rem;opacity:.7;margin-top:22px;font-style:italic}
+.menu-grid .card:last-child{grid-column:1/-1}.menu-grid .card:last-child ul{columns:2;column-gap:40px}
+.menu-grid .card li{break-inside:avoid}
+@media(max-width:780px){.menu-grid .card:last-child ul{columns:1}}
