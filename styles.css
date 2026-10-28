@@ -51,3 +51,7 @@ footer a{color:inherit}
 .menu-grid .mi{display:block}
 @media(max-width:1000px){.gal{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:780px){.gal{gap:12px}.gal .photo{aspect-ratio:1}.about-photo{aspect-ratio:4/3}.gal figcaption{font-size:1.05rem;padding:22px 10px 8px}}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;margin-top:16px}
+.social a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--gd);padding:8px 14px;border-radius:30px;border:1px solid rgba(74,90,28,.25);transition:background .2s}
+.social a:hover{background:rgba(112,130,43,.12)}
+footer .social a{color:var(--c);border-color:rgba(251,246,234,.35)}footer .social a:hover{background:rgba(251,246,234,.12)}
