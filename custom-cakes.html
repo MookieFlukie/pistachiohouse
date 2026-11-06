@@ -46,10 +46,18 @@
 <div class="form-grid">
 <label class="fg">Customer name <span class="req">*</span><input name="customer_name" type="text" autocomplete="name" required></label>
 <label class="fg">Phone number <span class="req">*</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="(248) 555-0123"></label>
+<label class="fg">Email <span class="req">*</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+<label class="fg">Preferred contact method <span class="req">*</span>
+<select name="contact_method" required>
+<option value="">Select…</option>
+<option>Text</option>
+<option>Call</option>
+<option>Email</option>
+</select></label>
 <label class="fg">Pickup date <span class="req">*</span><input name="pickup_date" type="date" required></label>
-<label class="fg">Pickup time<input name="pickup_time" type="time"></label>
-<label class="fg">Occasion
-<select name="occasion">
+<label class="fg">Pickup time <span class="req">*</span><input name="pickup_time" type="time" required></label>
+<label class="fg">Occasion <span class="req">*</span>
+<select name="occasion" required>
 <option value="">Select…</option>
 <option>Engagement</option>
 <option>Wedding</option>
@@ -58,34 +66,37 @@
 <option>Birthday</option>
 <option>Other celebration</option>
 </select></label>
-<label class="fg">Number of tiers<input name="tiers" type="number" min="1" max="10" step="1" inputmode="numeric"></label>
+<label class="fg">Number of tiers <span class="req">*</span><input name="tiers" type="number" min="1" max="10" step="1" inputmode="numeric" required></label>
 </div>
 
-<fieldset class="fg full"><legend>Cake size</legend>
+<fieldset class="fg full" id="fs-cake-size"><legend>Cake size <span class="req">*</span></legend>
 <div class="checks">
 <label><input type="radio" name="cake_size" value='6"'> 6"</label>
 <label><input type="radio" name="cake_size" value='8"'> 8"</label>
 <label><input type="radio" name="cake_size" value='10"'> 10"</label>
 <label><input type="radio" name="cake_size" value='12"'> 12"</label>
 <label class="grow">Other <input type="text" name="cake_size_other" placeholder="Describe size"></label>
-</div></fieldset>
+</div>
+<p class="hint">Choose a size or describe Other.</p>
+</fieldset>
 
-<fieldset class="fg full"><legend>Cake flavor</legend>
+<fieldset class="fg full" id="fs-flavor"><legend>Cake flavor <span class="req">*</span></legend>
 <div class="checks">
 <label><input type="checkbox" name="flavor" value="Vanilla"> Vanilla</label>
 <label><input type="checkbox" name="flavor" value="Chocolate"> Chocolate</label>
 <label><input type="checkbox" name="flavor" value="Marble"> Marble</label>
-<label><input type="checkbox" name="flavor" value="Dubai Chocolate Cake"> Dubai Chocolate Cake</label>
-</div></fieldset>
+</div>
+<p class="hint">Select at least one flavor.</p>
+</fieldset>
 
-<fieldset class="fg full"><legend>Cake design</legend>
+<fieldset class="fg full" id="fs-design"><legend>Cake design <span class="req">*</span></legend>
 <div class="checks">
-<label><input type="radio" name="design" value="Fondant"> Fondant</label>
+<label><input type="radio" name="design" value="Fondant" required> Fondant</label>
 <label><input type="radio" name="design" value="Buttercream"> Buttercream</label>
 <label><input type="radio" name="design" value="Both"> Both</label>
 </div></fieldset>
 
-<fieldset class="fg full"><legend>Cake filling</legend>
+<fieldset class="fg full" id="fs-filling"><legend>Cake filling <span class="req">*</span></legend>
 <div class="checks">
 <label><input type="checkbox" name="filling" value="Chocolate Mousse"> Chocolate Mousse</label>
 <label><input type="checkbox" name="filling" value="Vanilla Mousse"> Vanilla Mousse</label>
@@ -94,32 +105,31 @@
 <label><input type="checkbox" name="filling" value="Pistachio Custard"> Pistachio Custard</label>
 <label><input type="checkbox" name="filling" value="Custard"> Custard</label>
 <label class="grow">Other <input type="text" name="filling_other" placeholder="Other filling"></label>
-</div></fieldset>
+</div>
+<p class="hint">Select at least one filling or describe Other.</p>
+</fieldset>
 
-<fieldset class="fg full"><legend>Toppers</legend>
+<fieldset class="fg full" id="fs-toppers"><legend>Toppers <span class="req">*</span></legend>
 <div class="checks">
-<label><input type="radio" name="toppers" value="Provided by Customer"> Provided by Customer</label>
+<label><input type="radio" name="toppers" value="Provided by Customer" required> Provided by Customer</label>
 <label><input type="radio" name="toppers" value="Provided by Pistachio House"> Provided by Pistachio House</label>
 </div></fieldset>
 
-<fieldset class="fg full"><legend>Pictures provided by customer?</legend>
-<div class="checks">
-<label><input type="radio" name="pictures" value="Yes"> Yes</label>
-<label><input type="radio" name="pictures" value="No"> No</label>
-</div>
-<p class="hint">If yes, bring photos in person, text them to us, or describe the design in the notes below. You can also share real cake photos with us later for the website gallery.</p>
-</fieldset>
+<label class="fg full">Inspiration photo <span class="req">*</span>
+<input name="inspiration_photo" type="text" required placeholder="Photo link, or “Will text photos to (248) 313-9914”">
+</label>
+<p class="hint" style="margin-top:-8px;margin-bottom:14px">File upload is not available on our form plan. Paste a photo link here, or text inspiration photos to <a href="tel:+12483139914">(248) 313-9914</a> and write “Will text photos to (248) 313-9914” in this field.</p>
 
 <div class="form-grid">
-<label class="fg full">Message on cake<input name="message" type="text" maxlength="120" placeholder="Happy Birthday, Congratulations, etc."></label>
+<label class="fg full">Message on cake <span class="req">*</span><input name="message" type="text" maxlength="120" required placeholder="Happy Birthday, Congratulations, etc."></label>
 </div>
-<fieldset class="fg full"><legend>Message placement</legend>
+<fieldset class="fg full" id="fs-message-placement"><legend>Message placement <span class="req">*</span></legend>
 <div class="checks">
-<label><input type="radio" name="message_placement" value="On board"> On board</label>
+<label><input type="radio" name="message_placement" value="On board" required> On board</label>
 <label><input type="radio" name="message_placement" value="On Cake"> On Cake</label>
 </div></fieldset>
 
-<label class="fg full">Special instructions / notes<textarea name="notes" rows="4" placeholder="Colors, theme, allergies, design ideas, reference photos description…"></textarea></label>
+<label class="fg full">Special instructions / notes <span class="req">*</span><textarea name="notes" rows="4" required placeholder="Colors, theme, allergies, design ideas…"></textarea></label>
 
 <p id="cake-form-status" class="form-status" role="status" aria-live="polite" hidden></p>
 <p class="form-actions"><button type="submit" class="btn" id="cake-submit">Send inquiry</button>
@@ -172,6 +182,12 @@ document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.body.classL
     if(!el||el.type==='checkbox') return '';
     return String(el.value||'').trim();
   }
+  function requireGroup(ok, message, focusEl){
+    if(ok) return true;
+    showError(message);
+    if(focusEl) focusEl.focus();
+    return false;
+  }
   var again=document.getElementById('cake-thanks-again');
   if(again) again.addEventListener('click',function(e){
     e.preventDefault();
@@ -184,9 +200,13 @@ document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.body.classL
     if(!form.reportValidity()) return;
     var size=vals('cake_size');
     var sizeOther=val('cake_size_other');
+    if(!requireGroup(size||sizeOther, 'Please choose a cake size or describe Other.', form.querySelector('[name="cake_size"]'))) return;
     if(sizeOther) size=size?(size+'; Other: '+sizeOther):('Other: '+sizeOther);
+    var flavors=vals('flavor');
+    if(!requireGroup(flavors, 'Please select at least one cake flavor.', form.querySelector('[name="flavor"]'))) return;
     var filling=vals('filling');
     var fillingOther=val('filling_other');
+    if(!requireGroup(filling||fillingOther, 'Please select at least one filling or describe Other.', form.querySelector('[name="filling"]'))) return;
     if(fillingOther) filling=filling?(filling+'; Other: '+fillingOther):('Other: '+fillingOther);
     var pickup=val('pickup_date');
     var time=val('pickup_time');
@@ -197,17 +217,20 @@ document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.body.classL
       from_name: form.elements.from_name.value,
       botcheck: form.elements.botcheck && form.elements.botcheck.checked ? '1' : '',
       name: val('customer_name'),
+      email: val('email'),
       'Customer name': val('customer_name'),
       Phone: val('phone'),
+      Email: val('email'),
+      'Preferred contact method': val('contact_method'),
       'Pickup date/time': pickup,
       Occasion: val('occasion'),
       'Cake size': size,
       'Number of tiers': val('tiers'),
-      'Cake flavor': vals('flavor'),
+      'Cake flavor': flavors,
       'Cake design': vals('design'),
       'Cake filling': filling,
       Toppers: vals('toppers'),
-      'Pictures provided by customer': vals('pictures'),
+      'Inspiration photo': val('inspiration_photo'),
       'Message on cake': val('message'),
       'Message placement': vals('message_placement'),
       'Special instructions': val('notes')
