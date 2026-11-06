@@ -70,3 +70,37 @@ footer .social a{color:var(--c);border-color:rgba(251,246,234,.35)}footer .socia
 .hero-in .btn{display:block;width:100%;max-width:320px;margin:8px auto}
 .menu-order .btn{display:inline-block;width:auto;max-width:100%}
 }
+
+/* Custom cakes */
+.ticks.dark li:before{color:var(--g)}
+.cakes-intro .ticks{margin:14px 0 22px}
+.cake-form-wrap{margin-top:50px;background:#fff;border-radius:18px;padding:32px 28px;box-shadow:0 6px 20px rgba(74,90,28,.08);border-top:5px solid var(--g)}
+.form-lead{max-width:640px;margin:0 auto 22px}
+.cake-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.cake-form .fg{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:.9rem;color:var(--gd)}
+.cake-form .fg.full{grid-column:1/-1}
+.cake-form .fg input[type=text],
+.cake-form .fg input[type=tel],
+.cake-form .fg input[type=date],
+.cake-form .fg input[type=time],
+.cake-form .fg input[type=number],
+.cake-form .fg select,
+.cake-form .fg textarea{font:inherit;font-weight:400;color:var(--t);padding:11px 12px;border:1px solid #d9cfb6;border-radius:10px;background:var(--c);width:100%}
+.cake-form .fg textarea{resize:vertical;min-height:96px}
+.cake-form fieldset.fg{border:1px solid #e5dcc6;border-radius:12px;padding:12px 14px 14px;margin:16px 0 0}
+.cake-form fieldset.fg legend{padding:0 6px;font-weight:700;color:var(--gd)}
+.cake-form .checks{display:flex;flex-wrap:wrap;gap:10px 16px;font-weight:400;color:var(--t)}
+.cake-form .checks label{display:inline-flex;align-items:center;gap:6px;font-weight:400}
+.cake-form .checks .grow{flex:1 1 180px}
+.cake-form .checks .grow input[type=text]{margin-left:4px;flex:1;min-width:120px;font:inherit;padding:8px 10px;border:1px solid #d9cfb6;border-radius:8px;background:var(--c)}
+.cake-form .req{color:#a33}
+.cake-form .hint{font-size:.85rem;font-weight:400;opacity:.75;margin-top:8px;line-height:1.45}
+.form-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:22px}
+.cake-thanks{margin-top:8px;text-align:center}
+.cake-thanks h3{margin-bottom:10px}
+.cake-summary{text-align:left;white-space:pre-wrap;background:var(--c);border:1px solid var(--c2);border-radius:12px;padding:16px;margin:16px 0;font-size:.9rem;line-height:1.5;max-height:360px;overflow:auto}
+@media(max-width:780px){
+.cake-form .form-grid{grid-template-columns:1fr}
+.cake-form-wrap{padding:22px 16px}
+.form-actions .btn{width:100%;text-align:center}
+}
