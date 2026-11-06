@@ -58,3 +58,15 @@ footer .social a{color:var(--c);border-color:rgba(251,246,234,.35)}footer .socia
 .card-note{font-size:.85rem;color:var(--gold);font-weight:700;margin:-2px 0 8px}
 .gal .photo:first-child{grid-column:span 2;aspect-ratio:auto}
 @media(max-width:780px){.menu-grid{grid-template-columns:1fr}.gal .photo:first-child{aspect-ratio:2/1}}
+
+.btn.doordash{background:var(--gd);border-color:var(--gd)}.btn.doordash:hover{background:#354214;border-color:#354214}
+.btn.ghost.doordash,.doordash.ghost{background:transparent;color:var(--gd);border-color:var(--gd)}
+.nav-order{display:inline-block;margin-left:22px;padding:8px 16px;border-radius:30px;background:var(--g);color:#fff!important;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;border:2px solid var(--g)}.nav-order:hover{background:var(--gd);border-color:var(--gd);color:#fff!important}
+.hero-in .btn{margin:4px 6px}
+.callbox .btn{display:block;width:100%;margin:0 0 12px;text-align:center}.callbox .btn:last-of-type{margin-bottom:14px}
+.menu-order{margin-top:18px}.menu-order .btn{margin:0 6px}
+@media(max-width:780px){
+.nav-order{margin:10px 26px;text-align:center}
+.hero-in .btn{display:block;width:100%;max-width:320px;margin:8px auto}
+.menu-order .btn{display:inline-block;width:auto;max-width:100%}
+}
