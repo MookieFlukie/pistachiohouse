@@ -104,3 +104,21 @@ footer .social a{color:var(--c);border-color:rgba(251,246,234,.35)}footer .socia
 .cake-form-wrap{padding:22px 16px}
 .form-actions .btn{width:100%;text-align:center}
 }
+
+/* Cakes we've made */
+.cakes-blurb{max-width:720px;margin:0 auto 18px}
+.cakes-ticks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;list-style:none;margin:0 0 22px;padding:0}
+.cakes-ticks li{margin:0}
+.made-heading{margin-top:36px}
+.made-sub{margin-bottom:18px}
+.made-gal{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
+.made-gal .made-photo{aspect-ratio:3/4;margin:0}
+.made-gal .made-photo img,.made-gal .made-video video{width:100%;height:100%;object-fit:cover;display:block}
+.made-gal .made-video{background:#1e240c}
+.made-gal .made-video video{border:0}
+.made-gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;background:linear-gradient(transparent,rgba(30,36,12,.72))}
+@media(max-width:1000px){.made-gal{grid-template-columns:repeat(3,1fr)}.made-gal .made-video{grid-column:span 1}}
+@media(max-width:780px){
+.made-gal{grid-template-columns:repeat(2,1fr);gap:12px}
+.cakes-ticks{flex-direction:column;align-items:center;gap:6px}
+}
