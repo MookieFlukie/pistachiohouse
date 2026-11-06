@@ -49,8 +49,13 @@
 
 <div id="cake-inquiry" class="cake-form-wrap">
 <h3 class="c">Custom Cake Inquiry</h3>
-<p class="c sub form-lead">Fill this out and we will open a message with your details so you can send it, or call us at <a href="tel:+12483139914">(248) 313-9914</a>. A shop email for online delivery is coming soon.</p>
-<form id="cake-form" class="cake-form" novalidate>
+<p class="c sub form-lead">Send us your cake details and we will follow up. Prefer to talk it through? Call <a href="tel:+12483139914">(248) 313-9914</a>.</p>
+<form id="cake-form" class="cake-form" action="https://formsubmit.co/pistachiohouse1@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Custom cake inquiry">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" value="https://pistachiohouse.net/#cake-thanks">
+<input type="text" name="_honey" value="" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div class="form-grid">
 <label class="fg">Customer name <span class="req">*</span><input name="customer_name" type="text" autocomplete="name" required></label>
 <label class="fg">Phone number <span class="req">*</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="(248) 555-0123"></label>
@@ -129,21 +134,16 @@
 
 <label class="fg full">Special instructions / notes<textarea name="notes" rows="4" placeholder="Colors, theme, allergies, design ideas, reference photos description…"></textarea></label>
 
-<p class="form-actions"><button type="submit" class="btn">Prepare inquiry</button>
+<p class="form-actions"><button type="submit" class="btn">Send inquiry</button>
 <a class="btn ghost" href="tel:+12483139914">Or call (248) 313-9914</a></p>
 <p class="hint c">Staff payment fields from our in-store form (total, deposit, balance) are handled when we confirm your order by phone.</p>
 </form>
 
 <div id="cake-thanks" class="cake-thanks" hidden>
-<h3>Almost done</h3>
-<p>Your inquiry details are ready. Call us at <a href="tel:+12483139914"><b>(248) 313-9914</b></a> to place the order, or open the prefilled message below and send it once you have our email.</p>
-<pre id="cake-summary" class="cake-summary"></pre>
-<p class="form-actions">
-<button type="button" class="btn" id="cake-copy">Copy details</button>
-<a class="btn" id="cake-mailto" href="#">Open in email app</a>
-<a class="btn ghost" href="tel:+12483139914">Call now</a>
-</p>
-<p id="cake-copy-status" class="hint" aria-live="polite"></p>
+<h3>Thank you</h3>
+<p>Your custom cake inquiry was sent. We will get back to you soon. Questions in the meantime? Call <a href="tel:+12483139914"><b>(248) 313-9914</b></a>.</p>
+<p class="form-actions"><a class="btn" href="tel:+12483139914">Call (248) 313-9914</a>
+<a class="btn ghost" href="#cake-inquiry" id="cake-thanks-again">Send another inquiry</a></p>
 </div>
 </div>
 </section>
@@ -158,59 +158,24 @@ document.getElementById('y').textContent=new Date().getFullYear();
 document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('open'));
 (function(){
   var form=document.getElementById('cake-form');
-  if(!form) return;
   var thanks=document.getElementById('cake-thanks');
-  var summaryEl=document.getElementById('cake-summary');
-  var mailtoA=document.getElementById('cake-mailto');
-  var copyBtn=document.getElementById('cake-copy');
-  var copyStatus=document.getElementById('cake-copy-status');
-  var lastBody='';
-  function vals(name){return Array.prototype.map.call(form.querySelectorAll('[name="'+name+'"]:checked'),function(el){return el.value}).join(', ')}
-  function val(name){var el=form.elements[name];return el?String(el.value||'').trim():''}
-  function line(label,v){return v?label+': '+v:null}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(!form.reportValidity()) return;
-    var size=vals('cake_size');
-    var sizeOther=val('cake_size_other');
-    if(sizeOther) size=size?(size+'; Other: '+sizeOther):('Other: '+sizeOther);
-    var filling=vals('filling');
-    var fillingOther=val('filling_other');
-    if(fillingOther) filling=filling?(filling+'; Other: '+fillingOther):('Other: '+fillingOther);
-    var pickup=val('pickup_date');
-    var time=val('pickup_time');
-    if(time) pickup=pickup+' '+time;
-    var lines=[
-      'Custom cake inquiry — Pistachio House',
-      '',
-      line('Customer name', val('customer_name')),
-      line('Phone', val('phone')),
-      line('Pickup date/time', pickup),
-      line('Occasion', val('occasion')),
-      line('Cake size', size),
-      line('Number of tiers', val('tiers')),
-      line('Cake flavor', vals('flavor')),
-      line('Cake design', vals('design')),
-      line('Cake filling', filling),
-      line('Toppers', vals('toppers')),
-      line('Pictures provided by customer', vals('pictures')),
-      line('Message on cake', val('message')),
-      line('Message placement', vals('message_placement')),
-      line('Special instructions', val('notes'))
-    ].filter(Boolean);
-    lastBody=lines.join('\n');
-    summaryEl.textContent=lastBody;
-    var mail='mailto:?subject='+encodeURIComponent('Custom cake inquiry')+'&body='+encodeURIComponent(lastBody+'\n\n— Sent from pistachiohouse.net');
-    mailtoA.href=mail;
+  if(!form||!thanks) return;
+  function showThanks(){
     form.hidden=true;
     thanks.hidden=false;
     thanks.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-  copyBtn.addEventListener('click',function(){
-    function ok(){copyStatus.textContent='Copied. Call (248) 313-9914 or paste into a message to us.';}
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(lastBody).then(ok).catch(function(){copyStatus.textContent='Select the text above and copy it manually.';});
-    } else {copyStatus.textContent='Select the text above and copy it manually.';}
+  }
+  function showForm(){
+    thanks.hidden=true;
+    form.hidden=false;
+  }
+  if(location.hash==='#cake-thanks') showThanks();
+  var again=document.getElementById('cake-thanks-again');
+  if(again) again.addEventListener('click',function(e){
+    e.preventDefault();
+    history.replaceState(null,'',location.pathname+location.search+'#cake-inquiry');
+    showForm();
+    form.scrollIntoView({behavior:'smooth',block:'start'});
   });
 })();
 </script>

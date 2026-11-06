@@ -122,3 +122,5 @@ footer .social a{color:var(--c);border-color:rgba(251,246,234,.35)}footer .socia
 .made-gal{grid-template-columns:repeat(2,1fr);gap:12px}
 .cakes-ticks{flex-direction:column;align-items:center;gap:6px}
 }
+
+.cake-form .honey{position:absolute;left:-9999px;height:0;width:0;opacity:0;overflow:hidden;tab-index:-1}
