@@ -14,6 +14,7 @@ They were resized and compressed to WebP (quality 80) for the web. The About pho
 | images/gallery-crepe.webp | Crepe with strawberries and chocolate | solod_sha | https://www.pexels.com/photo/sliced-strawberries-on-crepe-in-a-white-plate-7664084/ |
 | images/gallery-gift-box.webp | Box of assorted cookies | Ali Dashti | https://www.pexels.com/photo/box-with-variety-of-cookies-17517693/ |
 | images/gallery-display-case.webp | Pastry display case | Svitlana Shakalova | https://www.pexels.com/photo/assorted-french-pastries-on-display-at-bakery-31101247/ |
+| images/coming-soon-kunafa.webp | Kunafa with pistachios and mint | Mohamed Olwy | https://www.pexels.com/photo/delicious-kunafa-with-pistachios-and-mint-garnish-36691304/ |
 
 ## Owner photos
 

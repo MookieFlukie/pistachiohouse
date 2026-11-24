@@ -134,3 +134,13 @@ nav a[aria-current="page"]{color:var(--g)}
 .menu-grid .mi{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .badge{display:inline-block;font-family:Lato,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--g);padding:3px 9px;border-radius:999px;line-height:1.2;white-space:nowrap;vertical-align:middle}
 .badge-outline{background:transparent;color:var(--g);border:1px solid var(--g)}
+
+.coming-soon{background:var(--c2);color:var(--t);border-top:1px solid rgba(74,90,28,.08)}
+.coming-soon h2{color:var(--gd);margin-top:10px}
+.coming-soon p{margin-bottom:14px}
+.coming-soon-eyebrow{margin:0 0 4px}
+.coming-soon-photo{box-shadow:0 8px 28px rgba(74,90,28,.16)}
+.coming-soon-credit{padding:0 22px 28px;margin-top:-18px}
+@media(max-width:780px){
+.coming-soon-credit{margin-top:8px;padding-bottom:22px}
+}
